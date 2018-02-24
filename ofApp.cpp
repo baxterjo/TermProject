@@ -1,9 +1,12 @@
 #include "ofApp.h"
+#include "dot.h"
+#include "block.h"
 
 
 void ofApp::setup(){
 	ofBackground(23, 20, 34);
 	brownDot = dot_construct(400, 0, 10, ofColor(176, 200, 150));
+	blackBlock = block_construct(30, 60, 100, 100, ofColor(0, 0, 0));
 }
 
 //--------------------------------------------------------------
@@ -15,6 +18,7 @@ void ofApp::update(){
 //--------------------------------------------------------------
 void ofApp::draw(){
 	dot_draw(brownDot);
+	block_draw(blackBlock);
 }
 
 //--------------------------------------------------------------

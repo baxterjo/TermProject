@@ -12,14 +12,16 @@ struct block {
 	ofColor color;
 };
 
-struct block* block_construct(float x, float y, float side, ofColor color) {
+struct block* block_construct(float x, float y, float w, float h, ofColor color) {
 	struct block* thisBlock = (struct block*) malloc(sizeof(struct block));
 
 	thisBlock->x = x;
 	thisBlock->y = y;
-	thisBlock->w = side;
-	thisBlock->h = side;
+	thisBlock->w = w;
+	thisBlock->h = h;
 	thisBlock->color = color;
+
+	return thisBlock;
 }
 
 void block_draw(struct block* block) {

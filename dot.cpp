@@ -1,4 +1,4 @@
-// dot.c
+// dot.cpp
 #include "ofMain.h"
 #include "dot.h"
 #include <stdlib.h>

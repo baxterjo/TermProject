@@ -8,6 +8,7 @@ class ofApp : public ofBaseApp{
 	public:
 
 		struct dot* brownDot;
+		struct block* blackBlock;
 
 		void setup();
 		void update();
