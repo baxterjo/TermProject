@@ -1,14 +1,13 @@
 #pragma once
 
 #include "ofMain.h"
-#include "dot.h"
 
 class ofApp : public ofBaseApp{
 
 	public:
 
-		struct dot* brownDot;
-		struct block* blackBlock;
+		struct dot* dotOne;
+		struct block* blockOne;
 
 		void setup();
 		void update();

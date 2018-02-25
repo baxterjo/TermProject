@@ -5,24 +5,24 @@
 
 void ofApp::setup(){
 	ofBackground(23, 20, 34);
-	brownDot = dot_construct(400, 0, 10, ofColor(176, 200, 150));
-	blackBlock = block_construct(30, 60, 100, 100, ofColor(0, 0, 0));
+	dotOne = dot_construct(400, 50, 10, ofColor(176, 200, 150));
+	blockOne = block_construct(30, 60, 100, 100, ofColor(0, 204, 204));
 }
 
 //--------------------------------------------------------------
 void ofApp::update(){
-	dot_move_down(brownDot);
-	dot_grow(brownDot);
+	
 }
 
 //--------------------------------------------------------------
 void ofApp::draw(){
-	dot_draw(brownDot);
-	block_draw(blackBlock);
+	dot_draw(dotOne);
+	block_draw(blockOne);
 }
 
 //--------------------------------------------------------------
 void ofApp::keyPressed(int key){
+	block_control(key, blockOne);
 
 }
 

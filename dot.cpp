@@ -29,10 +29,22 @@ void dot_draw(struct dot* dot) {
 }
 
 void dot_move_down(struct dot* dot) {
-	dot->y += .5;
+	dot->y += 1;
 
 }
 
 void dot_grow(struct dot* dot) {
 	dot->radius += .25;
+}
+
+void dot_move_right(struct dot* dot) {
+	dot->x += 1;
+}
+
+void dot_move_left(struct dot* dot) {
+	dot->x -= 1;
+}
+
+void dot_move_up(struct dot* dot) {
+	dot->y -= 1;
 }
