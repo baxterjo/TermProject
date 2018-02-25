@@ -56,7 +56,7 @@ void block_move_down(struct block* block) {
 	block->y += 3;
 }
 
-void block_control(int key,struct block* block) {
+void block_control(int key, struct block* block) {
 	if (key == 'a') {
 		block_move_left(block);
 	}
