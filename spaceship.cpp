@@ -23,7 +23,7 @@ struct ship* construct_ship(int x, int y, int width, int height, ofColor color) 
 
 void ship_draw(struct ship* ship) {
 	ofSetColor(ship->color);
-	ofDrawCone(ship->x, ship->y, ship->width, ship_height);
+	ofDrawCone(ship->x, ship->y, ship->width, ship->height);
 }
 
 void ship_move_right(struct ship* ship) {
