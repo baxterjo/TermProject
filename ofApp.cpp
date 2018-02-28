@@ -22,7 +22,12 @@ void ofApp::draw(){
 
 //--------------------------------------------------------------
 void ofApp::keyPressed(int key){
-	ship_control(key, shipOne);
+	if (key == 'a') {
+		ship_thrust_left(shipOne);
+	}
+	else if (key == 'd') {
+		ship_thrust_right(shipOne);
+	}
 
 }
 

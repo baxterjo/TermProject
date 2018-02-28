@@ -51,15 +51,6 @@ void ship_bob_around(struct ship* ship) {
 
 }
 
-void ship_control(int key, struct ship* ship) {
-	if (key == 'a') {
-		ship_thrust_left(ship);
-	}
-	else if (key == 'd') {
-		ship_thrust_right(ship);
-	}
-}
-
 bool ship_is_at_edge(struct ship* ship) {
 	if (ship->x <= 0){
 		ship->x = 0;
