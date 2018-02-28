@@ -1,28 +1,28 @@
 #include "ofApp.h"
-#include "dot.h"
-#include "block.h"
+#include "spaceship.h"
 
 
 void ofApp::setup(){
 	ofBackground(23, 20, 34);
-	dotOne = dot_construct(400, 50, 10, ofColor(176, 200, 150));
-	blockOne = block_construct(30, 60, 100, 100, ofColor(0, 204, 204));
+	shipOne = construct_ship(ofGetWidth() / 2, ofGetHeight() - 200, 100, 200, ofColor(240, 250, 50));
 }
 
 //--------------------------------------------------------------
 void ofApp::update(){
-	
+	ship_move(shipOne);
+	if (ship_is_at_edge(shipOne)) {
+		ship_bounce(shipOne);
+	}
 }
 
 //--------------------------------------------------------------
 void ofApp::draw(){
-	dot_draw(dotOne);
-	block_draw(blockOne);
+	ship_draw(shipOne);
 }
 
 //--------------------------------------------------------------
 void ofApp::keyPressed(int key){
-	block_control(key, blockOne);
+	ship_control(key, shipOne);
 
 }
 

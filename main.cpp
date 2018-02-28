@@ -1,5 +1,6 @@
 //Jordan Baxter
-//Moving Growing Dot.....Moon?
+//Term Project: Everything but aliens.
+//Starting program for space shooter game.
 #include "ofMain.h"
 #include "ofApp.h"
 

@@ -6,8 +6,7 @@ class ofApp : public ofBaseApp{
 
 	public:
 
-		struct dot* dotOne;
-		struct block* blockOne;
+		struct ship* shipOne;
 
 		void setup();
 		void update();
