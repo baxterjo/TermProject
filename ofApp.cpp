@@ -4,12 +4,15 @@
 
 void ofApp::setup(){
 	ofBackground(23, 20, 34);
-	shipOne = construct_ship(ofGetWidth() / 2, ofGetHeight() - 200, 100, 200, ofColor(240, 250, 50));
+	grayShip.load("ship.png");
+	shipOne = construct_ship(ofGetWidth() / 2, ofGetHeight() - 200, 
+									100, 200, grayShip);
 }
 
 //--------------------------------------------------------------
 void ofApp::update(){
 	ship_move(shipOne);
+	ship_bob_around(shipOne);
 	if (ship_is_at_edge(shipOne)) {
 		ship_bounce(shipOne);
 	}

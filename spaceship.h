@@ -2,9 +2,7 @@
 #pragma once
 #include "ofMain.h"
 
-
-
-struct ship* construct_ship(float x, float y, float w, float h, ofColor color);
+struct ship* construct_ship(float x, float y, float w, float h, ofImage image);
 
 void ship_draw(struct ship* ship);
 
