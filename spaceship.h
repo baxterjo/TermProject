@@ -4,9 +4,9 @@
 
 
 
-struct ship* construct_ship(float x, float y, float w, float h, ofColor color);
+struct ship* construct_ship(float x, float y, float w, float h);
 
-void ship_draw(struct ship* ship);
+void ship_draw(struct ship* ship, ofImage image);
 
 void ship_thrust_right(struct ship* ship);
 

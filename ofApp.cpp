@@ -3,13 +3,15 @@
 
 
 void ofApp::setup(){
+	grayShip.load("ship.png");
 	ofBackground(23, 20, 34);
-	shipOne = construct_ship(ofGetWidth() / 2, ofGetHeight() - 200, 100, 200, ofColor(240, 250, 50));
+	shipOne = construct_ship(ofGetWidth() / 2, ofGetHeight() - 250, 115, 200);
 }
 
 //--------------------------------------------------------------
 void ofApp::update(){
 	ship_move(shipOne);
+	ship_bob_around(shipOne);
 	if (ship_is_at_edge(shipOne)) {
 		ship_bounce(shipOne);
 	}
@@ -17,7 +19,7 @@ void ofApp::update(){
 
 //--------------------------------------------------------------
 void ofApp::draw(){
-	ship_draw(shipOne);
+	ship_draw(shipOne, grayShip);
 }
 
 //--------------------------------------------------------------
