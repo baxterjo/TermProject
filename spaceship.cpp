@@ -3,7 +3,7 @@
 #include "ofMain.h"
 #include <stdlib.h>
 
-static const float ACCELERATION = 0.08;
+static const float ACCELERATION = 0.1;
 
 
 struct ship {
