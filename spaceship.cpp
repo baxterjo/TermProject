@@ -45,7 +45,7 @@ void ship_move(struct ship* ship) {
 }
 
 void ship_bob_around(struct ship* ship) {
-	ship->y += 0.3 * sin(ship->t);
+	ship->y += 0.17 * sin(ship->t);
 	ship->x -= .08 * cos(ship->t / 3);
 }
 

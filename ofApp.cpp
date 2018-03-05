@@ -1,25 +1,32 @@
 #include "ofApp.h"
 #include "spaceship.h"
+#include "star.h"
 
 
-void ofApp::setup(){
+void ofApp::setup() {
 	grayShip.load("ship.png");
 	ofBackground(0, 0, 0);
 	shipOne = construct_ship(ofGetWidth() / 2, ofGetHeight() - 250, ofGetWidth() / 7, ofGetHeight() / 5);
+	star = construct_star(ofGetWidth() / 2, 0, 200);
 }
 
 //--------------------------------------------------------------
-void ofApp::update(){
+void ofApp::update() {
 	ship_move(shipOne);
 	ship_bob_around(shipOne);
 	if (ship_is_at_edge(shipOne)) {
 		ship_bounce(shipOne);
 	}
+	if (star_is_at_bottom(star)){
+		star_reset(star);
+}
+	move_star(star);
 }
 
 //--------------------------------------------------------------
 void ofApp::draw(){
 	ship_draw(shipOne, grayShip);
+	draw_star(star);
 }
 
 //--------------------------------------------------------------

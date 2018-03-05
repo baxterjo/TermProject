@@ -8,6 +8,7 @@ class ofApp : public ofBaseApp{
 
 		struct ship* shipOne;
 		ofImage grayShip;
+		struct star* star;
 
 		void setup();
 		void update();
