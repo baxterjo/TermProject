@@ -15,7 +15,7 @@ struct star* construct_star(int x, int y, float b) {
 	star* star = (struct star*) malloc(sizeof(struct star));
 	star->x = x;
 	star->y = y;
-	star->r = 5;
+	star->r = 3;
 	star->s = b/50;
 	star->color = ofColor(1 * b, 1 * b, 1 * b);
 

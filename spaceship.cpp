@@ -27,6 +27,7 @@ struct ship* construct_ship(float x, float y, float w, float h) {
 }
 
 void ship_draw(struct ship* ship, ofImage image) {
+	ofSetColor(255, 255, 255);
 	image.draw(ship->x, ship->y, ship->w, ship->h);
 }
 
