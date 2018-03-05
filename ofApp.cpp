@@ -5,7 +5,7 @@
 void ofApp::setup(){
 	grayShip.load("ship.png");
 	ofBackground(0, 0, 0);
-	shipOne = construct_ship(ofGetWidth() / 2, ofGetHeight() - 250, 115, 200);
+	shipOne = construct_ship(ofGetWidth() / 2, ofGetHeight() - 250, ofGetWidth() / 7, ofGetHeight() / 5);
 }
 
 //--------------------------------------------------------------
