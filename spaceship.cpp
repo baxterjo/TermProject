@@ -13,6 +13,7 @@ struct ship {
 	float w;
 	float h;
 	float t;
+	int lc;
 };
 
 struct ship* construct_ship(float x, float y, float w, float h) {
@@ -23,12 +24,13 @@ struct ship* construct_ship(float x, float y, float w, float h) {
 	this_ship->h = h;
 	this_ship->t = 0;
 	this_ship->v = 0;
+	this_ship->lc = 0;
 	return this_ship;
 }
 
-void ship_draw(struct ship* ship, ofImage image) {
+void ship_draw(struct ship* ship, ofImage* image) {
 	ofSetColor(255, 255, 255);
-	image.draw(ship->x, ship->y, ship->w, ship->h);
+	image->draw(ship->x, ship->y, ship->w, ship->h);
 }
 
 void ship_thrust_right(struct ship* ship) {
@@ -47,7 +49,10 @@ void ship_move(struct ship* ship) {
 
 void ship_bob_around(struct ship* ship) {
 	ship->y += 0.17 * sin(ship->t);
-	ship->x -= .08 * cos(ship->t / 3);
+	ship->x -= .08 * cos(ship->t / 2);
+	if (ship->t > 12.57) {
+		ship->t = 0;
+	}
 }
 
 bool ship_is_at_edge(struct ship* ship) {

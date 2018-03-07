@@ -7,7 +7,8 @@ class ofApp : public ofBaseApp{
 	public:
 
 		struct ship* shipOne;
-		ofImage grayShip;
+		ofImage ship;
+		ofImage* grayShip = &ship;
 		struct star* star;
 		struct star** star_field;
 
