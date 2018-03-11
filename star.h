@@ -1,6 +1,7 @@
 //star.h
 #pragma once
 #include "ofMain.h"
+#include <stdlib.h>
 
 struct star* construct_star(int x, int y, float b);
 

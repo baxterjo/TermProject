@@ -1,6 +1,8 @@
 #pragma once
-
 #include "ofMain.h"
+#include "spaceship.h"
+#include "star.h"
+#include "weapon.h"
 
 class ofApp : public ofBaseApp{
 

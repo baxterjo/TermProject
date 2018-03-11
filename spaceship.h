@@ -1,8 +1,11 @@
 //spaceship.h
 #pragma once
 #include "ofMain.h"
+#include <stdlib.h>
+#include "weapon.h"
 
 
+struct ship;
 
 struct ship* construct_ship(float x, float y, float w, float h);
 

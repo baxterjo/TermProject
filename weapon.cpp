@@ -1,8 +1,6 @@
 // weapon.cpp
 
-#include "ofMain.h"
 #include "weapon.h"
-#include "spaceship.h"
 
 struct laser {
 	float speed;

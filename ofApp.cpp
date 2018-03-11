@@ -1,9 +1,8 @@
 #include "ofApp.h"
-#include "spaceship.h"
-#include "star.h"
 
 
 void ofApp::setup() {
+	ofSetFrameRate(60);
 	grayShip->load("ship.png");
 	ofBackground(0, 0, 0);
 	shipOne = construct_ship(ofGetWidth() / 2, ofGetHeight() - 250, ofGetWidth() / 7, ofGetHeight() / 5);

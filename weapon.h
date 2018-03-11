@@ -8,5 +8,3 @@
 struct laser* construct_laser(float s, float h, float w, float x, float y);
 
 void fire_laser(struct ship* ship, struct laser* laser);
-
-

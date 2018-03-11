@@ -1,7 +1,5 @@
 //star.cpp
 #include "star.h"
-#include "ofMain.h"
-#include <stdlib.h>
 
 struct star {
 	int x;
@@ -16,7 +14,7 @@ struct star* construct_star(int x, int y, float b) {
 	star->x = x;
 	star->y = y;
 	star->r = 3;
-	star->s = b/50;
+	star->s = b/20;
 	star->color = ofColor(1 * b, 1 * b, 1 * b);
 
 	return star;

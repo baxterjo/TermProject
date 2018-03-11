@@ -1,9 +1,8 @@
 //spaceship.cpp
 #include "spaceship.h"
-#include "ofMain.h"
-#include <stdlib.h>
 
-static const float ACCELERATION = 0.1;
+
+static const float ACCELERATION = 0.65;
 
 
 struct ship {
@@ -44,13 +43,13 @@ void ship_thrust_left(struct ship* ship) {
 void ship_move(struct ship* ship) {
 	ship->x += ship->v;
 	ship->v *= 0.995;
-	ship->t += 0.01;
+	ship->t += 0.05;
 }
 
 void ship_bob_around(struct ship* ship) {
-	ship->y += 0.17 * sin(ship->t);
-	ship->x -= .08 * cos(ship->t / 2);
-	if (ship->t > 12.57) {
+	ship->y += 0.5 * sin(ship->t);
+	ship->x -= 0.4 * cos(ship->t / 4);
+	if (ship->t > 25.14) {
 		ship->t = 0;
 	}
 }
