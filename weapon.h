@@ -3,7 +3,7 @@
 #include "ofMain.h"
 #include "ofApp.h"
 #include <stdlib.h>
-#include "spaceship.h"
+#include "ship.h"
 
 struct laser* construct_laser(float s, float h, float w, float x, float y);
 

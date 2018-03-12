@@ -1,6 +1,6 @@
 #pragma once
 #include "ofMain.h"
-#include "spaceship.h"
+#include "ship.h"
 #include "star.h"
 #include "weapon.h"
 
