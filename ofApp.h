@@ -10,9 +10,11 @@ class ofApp : public ofBaseApp{
 
 		struct ship* shipOne;
 		ofImage ship;
-		ofImage* grayShip = &ship;
 		struct star* star;
 		struct star** star_field;
+		ofImage laserImage;
+		struct laser* laser;
+		struct laser** laser_mag;
 
 		void setup();
 		void update();

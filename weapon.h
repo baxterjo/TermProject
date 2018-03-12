@@ -5,6 +5,10 @@
 #include <stdlib.h>
 #include "ship.h"
 
-struct laser* construct_laser(float s, float h, float w, float x, float y);
+struct laser* construct_laser(float h, float w);
 
 void fire_laser(struct ship* ship, struct laser* laser);
+
+void draw_laser(struct lazer* laser, ofImage* image);
+
+void move_laser(struct laser* laser);

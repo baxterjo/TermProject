@@ -3,12 +3,17 @@
 
 void ofApp::setup() {
 	ofSetFrameRate(60);
-	grayShip->load("ship.png");
+	ship.load("ship.png");
+	laserImage.load("laser.png");
 	ofBackground(0, 0, 0);
 	shipOne = construct_ship(ofGetWidth() / 2, ofGetHeight() - 250, ofGetWidth() / 7, ofGetHeight() / 5);
 	star_field = (struct star**) malloc(sizeof(struct star*) * 300);
 	for (int i = 0; i < 301; ++i) {
 		star_field[i] = construct_star(ofRandom(0, ofGetWidth()),ofRandom(0, ofGetHeight()), ofRandom(50, 255));
+	}
+	laser_mag = (struct laser**) malloc(sizeof(struct laser*) * 25);
+	for (int i = 0; i < 24; ++i) {
+		laser_mag[i] = construct_laser(get_ship_h(shipOne), get_ship_w(shipOne) / 3);
 	}
 }
 
@@ -25,6 +30,7 @@ void ofApp::update() {
 			star_reset(star_field[i]);
 		}
 	}
+
 }
 
 //--------------------------------------------------------------
@@ -32,7 +38,7 @@ void ofApp::draw() {
 	for (int i = 0; i < 301; ++i) {
 		draw_star(star_field[i]);
 	}
-	ship_draw(shipOne, grayShip);
+	ship_draw(shipOne, &ship);
 }
 
 //--------------------------------------------------------------

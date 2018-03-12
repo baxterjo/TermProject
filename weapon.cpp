@@ -3,7 +3,6 @@
 #include "weapon.h"
 
 struct laser {
-	float speed;
 	float x;
 	float y;
 	float h;
@@ -11,10 +10,11 @@ struct laser {
 	ofColor color;
 };
 
-struct laser* construct_laser(float s, float h, float w, float x, float y) {
+
+
+struct laser* construct_laser(float h, float w) {
 	struct laser* this_laser;
 	this_laser = (struct laser*) malloc(sizeof(struct laser));
-	this_laser->speed = s;
 	this_laser->h = h;
 	this_laser->w = w;
 	this_laser->x = 0;
@@ -24,10 +24,24 @@ struct laser* construct_laser(float s, float h, float w, float x, float y) {
 }
 
 void fire_laser(struct ship* ship, struct laser* laser) {
-	laser->x = ship->x + (ship->w / 2);
-	laser->y = ship->y + (ship->h / 2);
-	ship->lc += 1;
-	if (ship->lc = 25) {
-		ship->lc = 0;
+	laser->x = get_ship_x(ship) + (get_ship_w(ship) / 2);
+	laser->y = get_ship_y(ship) + (get_ship_h(ship) / 2);
+	cycle_ship_lc(ship);
+}
+
+void move_laser(struct laser* laser) {
+	if (laser->y < ofGetHeight() && laser->y > laser->h * -1) {
+		laser->y -= 1;
+	}
+	else {
+		laser->x = 0;
+		laser->y = ofGetHeight() + (laser->h * 2);
+	}
+}
+
+void draw_laser(struct laser* laser, ofImage* image) {
+	if (laser->y < ofGetHeight() && laser->y > laser->h * -1) {
+		ofSetColor(255, 255, 255);
+		image->draw(laser->x, laser->y, laser->w, laser->h);
 	}
 }

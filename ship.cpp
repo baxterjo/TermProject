@@ -55,10 +55,11 @@ void ship_bob_around(struct ship* ship) {
 }
 
 bool ship_is_at_edge(struct ship* ship) {
-	if (ship->x <= 0){
+	if (ship->x <= 0) {
 		ship->x = 0;
-	return true;
-	} else if ((ship->x + ship->w) >= ofGetWidth()){
+		return true;
+	}
+	else if ((ship->x + ship->w) >= ofGetWidth()) {
 		ship->x = ofGetWidth() - ship->w;
 		return true;
 	}
@@ -69,3 +70,29 @@ void ship_bounce(struct ship* ship) {
 	ship->v *= -0.5;
 }
 
+float get_ship_x(struct ship* s) {
+	return s->x;
+}
+
+float get_ship_y(struct ship* s){
+	return s->y;
+}
+
+float get_ship_w(struct ship* s) {
+	return s->w;
+}
+
+float get_ship_h(struct ship* s) {
+	return s->h;
+}
+
+float get_ship_lc(struct ship* s) {
+	return s->lc;
+}
+
+void cycle_ship_lc(struct ship* s) {
+	s->lc += 1;
+	if (s->lc > 25) {
+		s->lc = 0;
+	}
+}
