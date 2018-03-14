@@ -8,7 +8,7 @@ void ofApp::setup() {
 	ofBackground(0, 0, 0);
 	shipOne = construct_ship(ofGetWidth() / 2, ofGetHeight() - 250, ofGetWidth() / 7, ofGetHeight() / 5);
 	star_field = (struct star**) malloc(sizeof(struct star*) * 300);
-	for (int i = 0; i < 301; ++i) {
+	for (int i = 0; i < 300; ++i) {
 		star_field[i] = construct_star(ofRandom(0, ofGetWidth()),ofRandom(0, ofGetHeight()), ofRandom(50, 255));
 	}
 	laser_mag = (struct laser**) malloc(sizeof(struct laser*) * 25);
@@ -24,11 +24,14 @@ void ofApp::update() {
 	if (ship_is_at_edge(shipOne)) {
 		ship_bounce(shipOne);
 	}
-	for (int i = 0; i < 301; ++i) {
+	for (int i = 0; i < 300; ++i) {
 		move_star(star_field[i]);
 		if (star_is_at_bottom(star_field[i])) {
 			star_reset(star_field[i]);
 		}
+	}
+	for (int i = 0; i < 25; ++i) {
+		move_laser(laser_mag[i]);
 	}
 
 }
@@ -39,6 +42,9 @@ void ofApp::draw() {
 		draw_star(star_field[i]);
 	}
 	ship_draw(shipOne, &ship);
+	for (int i = 0; i < 25; ++i) {
+		draw_laser(laser_mag[i], &laserImage);
+	}
 }
 
 //--------------------------------------------------------------
@@ -48,6 +54,9 @@ void ofApp::keyPressed(int key){
 	}
 	else if (key == 'd') {
 		ship_thrust_right(shipOne);
+	}
+	else if (key == ' ') {
+		fire_laser(shipOne, laser_mag[get_ship_lc(shipOne)]);
 	}
 
 }

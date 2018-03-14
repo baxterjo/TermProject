@@ -31,6 +31,6 @@ float get_ship_w(struct ship* s);
 
 float get_ship_h(struct ship* s);
 
-float get_ship_lc(struct ship* s);
+int get_ship_lc(struct ship* s);
 
 void cycle_ship_lc(struct ship* s);

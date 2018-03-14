@@ -86,13 +86,13 @@ float get_ship_h(struct ship* s) {
 	return s->h;
 }
 
-float get_ship_lc(struct ship* s) {
+int get_ship_lc(struct ship* s) {
 	return s->lc;
 }
 
 void cycle_ship_lc(struct ship* s) {
 	s->lc += 1;
-	if (s->lc > 25) {
+	if (s->lc > 24) {
 		s->lc = 0;
 	}
 }
