@@ -31,7 +31,7 @@ void fire_laser(struct ship* ship, struct laser* laser) {
 
 void move_laser(struct laser* laser) {
 	if (laser->y < ofGetHeight() && laser->y > laser->h * -1) {
-		laser->y -= 1;
+		laser->y -= 8;
 	}
 	else {
 		laser->x = 0;
