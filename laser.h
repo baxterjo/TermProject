@@ -5,7 +5,7 @@
 
 struct laser* construct_laser(float h, float w);
 
-void fire_laser(struct ship* ship, struct laser* laser);
+void fire_laser(struct ship* ship, struct laser* laser, ofSoundPlayer sound);
 
 void draw_laser(struct laser* laser, ofImage* image);
 

@@ -15,6 +15,8 @@ class ofApp : public ofBaseApp{
 		ofImage laserImage;
 		struct laser* laser;
 		struct laser** laser_mag;
+		ofSoundPlayer music;
+		ofSoundPlayer laserSound;
 
 		void setup();
 		void update();
