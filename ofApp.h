@@ -2,7 +2,7 @@
 #include "ofMain.h"
 #include "ship.h"
 #include "star.h"
-#include "weapon.h"
+#include "laser.h"
 
 class ofApp : public ofBaseApp{
 

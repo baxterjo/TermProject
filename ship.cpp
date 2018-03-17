@@ -2,7 +2,7 @@
 #include "ship.h"
 
 
-static const float ACCELERATION = 0.65;
+static const float ACCELERATION = 4;
 
 
 struct ship {
@@ -42,7 +42,7 @@ void ship_thrust_left(struct ship* ship) {
 
 void ship_move(struct ship* ship) {
 	ship->x += ship->v;
-	ship->v *= 0.995;
+	ship->v *= 0.75;
 	ship->t += 0.05;
 }
 

@@ -1,8 +1,6 @@
 //spaceship.h
 #pragma once
 #include "ofMain.h"
-#include <stdlib.h>
-#include "weapon.h"
 
 
 struct ship;
