@@ -26,10 +26,11 @@ struct laser* construct_laser(float h, float w) {
 void fire_laser(struct ship* ship, struct laser* laser) {
 	laser->x = get_ship_x(ship) + (get_ship_w(ship) / 2 - (laser->w / 2));
 }
-void fire_laser(struct ship* ship, struct laser* laser, ofSoundPlayer sound) {
+void fire_laser(struct ship* ship, struct laser* laser, ofSoundPlayer sound, int* sm) {
 	laser->x = get_ship_x(ship) + (get_ship_w(ship) / 2 - laser->w / 2);
 	laser->y = get_ship_y(ship) + (get_ship_h(ship) / 2);
 	sound.play();
+	*sm += 1;
 	cycle_ship_lc(ship);
 }
 
@@ -48,4 +49,8 @@ void draw_laser(struct laser* laser, ofImage* image) {
 		ofSetColor(255, 255, 255);
 		image->draw(laser->x, laser->y, laser->w, laser->h);
 	}
+}
+
+bool laser_on_screen(struct laser* laser) {
+	return (laser->y < ofGetHeight() && laser->y > laser->h * -1);
 }

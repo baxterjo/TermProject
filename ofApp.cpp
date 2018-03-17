@@ -1,4 +1,5 @@
 #include "ofApp.h"
+#include "hud.h"
 
 
 void ofApp::setup() {
@@ -7,6 +8,7 @@ void ofApp::setup() {
 	ship.load("ship.png");
 	laserImage.load("laser.png");
 	laserSound.load("laserSound.wav");
+	gameFont.load("SaucerBB.ttf", 24, true, true);
 	ofBackground(0, 0, 0);
 	music.play();
 	shipOne = construct_ship(ofGetWidth() / 2, ofGetHeight() - 250, ofGetWidth() / 7, ofGetHeight() / 5);
@@ -22,6 +24,7 @@ void ofApp::setup() {
 
 //--------------------------------------------------------------
 void ofApp::update() {
+	score_update(&score, &scoreMultiplier);
 	ship_move(shipOne);
 	ship_bob_around(shipOne);
 	if (ship_is_at_edge(shipOne)) {
@@ -41,12 +44,14 @@ void ofApp::update() {
 
 //--------------------------------------------------------------
 void ofApp::draw() {
+	
 	for (int i = 0; i < 300; ++i) {
 		draw_star(star_field[i]);
 	}
 	for (int i = 0; i < 25; ++i) {
 		draw_laser(laser_mag[i], &laserImage);
 	}
+	score_draw("Score: ", &score, gameFont);
 	ship_draw(shipOne, &ship);
 }
 
@@ -64,7 +69,7 @@ void ofApp::keyPressed(int key){
 //--------------------------------------------------------------
 void ofApp::keyReleased(int key){
 	if (key == ' ') {
-		fire_laser(shipOne, laser_mag[get_ship_lc(shipOne)], laserSound);
+		fire_laser(shipOne, laser_mag[get_ship_lc(shipOne)], laserSound, &scoreMultiplier);
 	}
 }
 

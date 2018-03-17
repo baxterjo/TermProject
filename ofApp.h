@@ -3,6 +3,7 @@
 #include "ship.h"
 #include "star.h"
 #include "laser.h"
+#include "hud.h"
 
 class ofApp : public ofBaseApp{
 
@@ -17,6 +18,9 @@ class ofApp : public ofBaseApp{
 		struct laser** laser_mag;
 		ofSoundPlayer music;
 		ofSoundPlayer laserSound;
+		ofTrueTypeFont gameFont;
+		int score = 0;
+		int scoreMultiplier = 1;
 
 		void setup();
 		void update();

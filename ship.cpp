@@ -42,7 +42,7 @@ void ship_thrust_left(struct ship* ship) {
 
 void ship_move(struct ship* ship) {
 	ship->x += ship->v;
-	ship->v *= 0.85;
+	ship->v *= 0.90;
 	ship->t += 0.05;
 }
 
