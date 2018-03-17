@@ -3,9 +3,12 @@
 
 void ofApp::setup() {
 	ofSetFrameRate(60);
+	music.load("music.ogg");
 	ship.load("ship.png");
 	laserImage.load("laser.png");
+	laserSound.load("laserSound.wav");
 	ofBackground(0, 0, 0);
+	music.play();
 	shipOne = construct_ship(ofGetWidth() / 2, ofGetHeight() - 250, ofGetWidth() / 7, ofGetHeight() / 5);
 	star_field = (struct star**) malloc(sizeof(struct star*) * 300);
 	for (int i = 0; i < 300; ++i) {
@@ -61,7 +64,7 @@ void ofApp::keyPressed(int key){
 //--------------------------------------------------------------
 void ofApp::keyReleased(int key){
 	if (key == ' ') {
-		fire_laser(shipOne, laser_mag[get_ship_lc(shipOne)]);
+		fire_laser(shipOne, laser_mag[get_ship_lc(shipOne)], laserSound);
 	}
 }
 

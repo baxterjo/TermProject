@@ -23,9 +23,10 @@ struct laser* construct_laser(float h, float w) {
 	return this_laser;
 }
 
-void fire_laser(struct ship* ship, struct laser* laser) {
+void fire_laser(struct ship* ship, struct laser* laser, ofSoundPlayer sound) {
 	laser->x = get_ship_x(ship) + (get_ship_w(ship) / 2);
 	laser->y = get_ship_y(ship) + (get_ship_h(ship) / 2);
+	sound.play();
 	cycle_ship_lc(ship);
 }
 
