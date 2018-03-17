@@ -1,5 +1,6 @@
 // weapon.cpp
 #include "laser.h"
+#include "ship.h"
 
 struct laser {
 	float x;
@@ -22,13 +23,11 @@ struct laser* construct_laser(float h, float w) {
 	return this_laser;
 }
 
-<<<<<<< HEAD:laser.cpp
 void fire_laser(struct ship* ship, struct laser* laser) {
 	laser->x = get_ship_x(ship) + (get_ship_w(ship) / 2 - (laser->w / 2));
-=======
+}
 void fire_laser(struct ship* ship, struct laser* laser, ofSoundPlayer sound) {
-	laser->x = get_ship_x(ship) + (get_ship_w(ship) / 2);
->>>>>>> 121241d4ddc27ea64a50bbdb658bd1fd2a7e17f6:weapon.cpp
+	laser->x = get_ship_x(ship) + (get_ship_w(ship) / 2 - laser->w / 2);
 	laser->y = get_ship_y(ship) + (get_ship_h(ship) / 2);
 	sound.play();
 	cycle_ship_lc(ship);
